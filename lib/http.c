@@ -3991,7 +3991,7 @@ CURLcode Curl_http_readwrite_headers(struct Curl_easy *data,
         }
       }
     }
-#ifdef USE_ALTSVC
+#ifdef USE_HSTS
     /* If enabled, the header is incoming and this is over HTTPS */
     else if(data->hsts && checkprefix("Strict-Transport-Security:", headp) &&
             (conn->handler->flags & PROTOPT_SSL)) {
